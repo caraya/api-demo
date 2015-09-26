@@ -10,7 +10,9 @@
 <!-- iron-collapse for the collapsible behavior -->
 <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
 <!-- Import juicy-markdown to work with the markdown content in the content -->
-<link rel="import" href="../../bower_components/juicy-markdown/juicy-markdown.html">
+<!--<link rel="import" href="../../bower_components/juicy-markdown/juicy-markdown.html">-->
+<!-- Import marked-element to see if it fixes some of the issues with juicy-markdown -->
+<link rel="import" href="../../bower_components/marked-element/marked-element.html">
 <!--
 
 Using `iron-ajax` fetch Udacity's course listings and display them using other polymer components.
@@ -37,11 +39,23 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         font-size: 1.5em;
-        cursor: pointer;
+        /* cursor: pointer; */
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         width: 80%;
-        text-align: left;
+        text-align: center;
       }
+
+      .subheading {
+        padding: 10px 15px;
+        background-color: #f3f3f3;
+        border: 1px solid #dedede;
+        font-size: 1em;
+        /* cursor: pointer; */
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        width: 80%;
+        text-align: center;
+      }
+
       .card-content {
         padding: 15px;
         border: 1px solid #dedede;
@@ -61,9 +75,15 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
 
         <material-paper>
             <div class="heading">{{item.title}}</div>
-            <div class="card-content"><a href="{{item.homepage}}">{{item.title}}</a></div>
+            <div class="subheading">{{item.subtitle}}</div>
+            <div class="card-content"><marked-element markdown="{{item.summary}}"></marked-element></div>
+            <div class="card-content"><marked-element markdown="{{item.syllabus}}"></marked-element></div>
+<!--
+            <div class="card-content"><juicy-markdown value="{{item.summary}}"></juicy-markdown></div>
+          <div class="card-content"><juicy-markdown value="{{item.syllabus}}"></juicy-markdown></div>
+-->
             <div class="card-actions">
-              <button on-click="toggle">toggle collapse</button>
+              <button on-click="toggle">Toggle</button><br/><a href="{{item.homepage}}">{{item.title}}</a>
             </div>
         </material-paper>
       </template>

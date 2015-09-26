@@ -2,6 +2,13 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <!-- Import iron-ajax to get the data -->
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<!-- PAPER STYLES -->
+<link rel="stylesheet" href="../../bower_components/paper-styles/demo.css">
+<!-- LAYOUT COMPONENTS -->
+<!-- paper-card as the layout container -->
+<link rel="import" href="../../bower_components/material-paper/material-paper.html">
+<!-- iron-collapse for the collapsible behavior -->
+<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
 <!-- Import juicy-markdown to work with the markdown content in the content -->
 <link rel="import" href="../../bower_components/juicy-markdown/juicy-markdown.html">
 <!--
@@ -21,6 +28,28 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
         box-sizing: border-box;
         display: block;
       }
+
+      .heading {
+        padding: 10px 15px;
+        margin-top: 20px;
+        background-color: #f3f3f3;
+        border: 1px solid #dedede;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-size: 1.5em;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        width: 80%;
+        text-align: left;
+      }
+      .card-content {
+        padding: 15px;
+        border: 1px solid #dedede;
+        border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 80%;
+      }
     </style>
     <iron-ajax
       auto
@@ -28,10 +57,15 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
       handle-as="json"
       last-response="{{response}}"></iron-ajax>
 
-      <template is="dom-repeat" items="{{response.courses}}>
-        <div>
-          <a href="{{item.homepage}}">{{item.title}}</a>
-        </div>
+      <template is="dom-repeat" items="{{response.courses}}">
+
+        <material-paper>
+            <div class="heading">{{item.title}}</div>
+            <div class="card-content"><a href="{{item.homepage}}">{{item.title}}</a></div>
+            <div class="card-actions">
+              <button on-click="toggle">toggle collapse</button>
+            </div>
+        </material-paper>
       </template>
   </template>
 
@@ -40,7 +74,13 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
       'use strict';
 
       Polymer({
-        is: 'course-listing'
+        is: 'course-listing',
+
+         properties: {
+          toggle: function() {
+            this.$.collapse.toggle();
+          }
+         }
       });// Closes Polymer
     })(); // Closes anonymous function
   </script>

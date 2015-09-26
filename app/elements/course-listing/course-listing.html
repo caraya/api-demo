@@ -1,0 +1,48 @@
+<!-- Import Polymer First -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<!-- Import iron-ajax to get the data -->
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<!-- Import juicy-markdown to work with the markdown content in the content -->
+<link rel="import" href="../../bower_components/juicy-markdown/juicy-markdown.html">
+<!--
+
+Using `iron-ajax` fetch Udacity's course listings and display them using other polymer components.
+
+Some of the items are written in Markdown. use `juicy-markdown` to address those elements.
+
+    <course-listing></course-listing>
+
+@demo demo/demo.html
+-->
+<dom-module id="course-listing">
+  <template>
+    <style>
+      :host {
+        box-sizing: border-box;
+        display: block;
+      }
+    </style>
+    <iron-ajax
+      auto
+      url="https://www.udacity.com/public-api/v0/courses"
+      handle-as="json"
+      last-response="{{response}}"></iron-ajax>
+
+      <template is="dom-repeat" items="{{response.courses}}>
+        <div>
+          <a href="{{item.homepage}}">{{item.title}}</a>
+        </div>
+      </template>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'course-listing'
+      });// Closes Polymer
+    })(); // Closes anonymous function
+  </script>
+
+</dom-module>

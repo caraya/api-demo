@@ -24,6 +24,8 @@ var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
 var polybuild = require('polybuild');
+// Added by Carlos on 0926
+var ghPages = require('gulp-gh-pages');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -165,6 +167,12 @@ gulp.task('rename-index', function () {
     .pipe($.rename('index.html'))
     .pipe(gulp.dest('dist/'));
   return del(['dist/index.build.html']);
+});
+
+// Publish the content of the dist directory to gh-pages
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 // Generate config data for the <sw-precache-cache> element.

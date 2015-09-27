@@ -6,11 +6,15 @@
 <link rel="stylesheet" href="../../bower_components/paper-styles/demo.css">
 <!-- LAYOUT COMPONENTS -->
 <!-- paper-card as the layout container -->
-<link rel="import" href="../../bower_components/material-paper/material-paper.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
 <!-- iron-collapse for the collapsible behavior -->
 <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
 <!-- Import juicy-markdown to work with the markdown content in the content -->
-<link rel="import" href="../../bower_components/juicy-markdown/juicy-markdown.html">
+<!--<link rel="import" href="../../bower_components/juicy-markdown/juicy-markdown.html">-->
+<!-- Import marked-element to see if it fixes some of the issues with juicy-markdown -->
+<link rel="import" href="../../bower_components/marked-element/marked-element.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <!--
 
 Using `iron-ajax` fetch Udacity's course listings and display them using other polymer components.
@@ -37,11 +41,23 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         font-size: 1.5em;
-        cursor: pointer;
+        /* cursor: pointer; */
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         width: 80%;
-        text-align: left;
+        text-align: center;
       }
+
+      .subheading {
+        padding: 10px 15px;
+        background-color: #f3f3f3;
+        border: 1px solid #dedede;
+        font-size: 1em;
+        /* cursor: pointer; */
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        width: 80%;
+        text-align: center;
+      }
+
       .card-content {
         padding: 15px;
         border: 1px solid #dedede;
@@ -60,11 +76,27 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
       <template is="dom-repeat" items="{{response.courses}}">
 
         <material-paper>
-            <div class="heading">{{item.title}}</div>
-            <div class="card-content"><a href="{{item.homepage}}">{{item.title}}</a></div>
-            <div class="card-actions">
-              <button on-click="toggle">toggle collapse</button>
+            <div class="heading">{{item.title}}<paper-icon-button icon="icons:expand-less" on-click="toggle" alt="Collapse Course"></paper-icon-button></div>
+            <div class="subheading">{{item.subtitle}}</div>
+            <div class="card-action">
+              <a href="{{item.homepage}}">
+                <paper-icon-button icon="link" alt="link to course in Udacity"></paper-icon-button>
+              </a>
             </div>
+              <div class="card-content"><marked-element markdown="{{item.summary}}"></marked-element></div>
+<!--
+
+              <div class="card-content"><iframe width="560" height="315" src="{{item.teaser_video.youtube_url}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+-->
+              <div class="card-content"><h2>Required Knowledge:</h2><marked-element markdown="{{item.required_knowledge}}"></marked-element></div>
+              <div class="card-content"><h2>Expected Learning:</h2><marked-element markdown="{{item.expected_learning}}"></marked-element></div>
+              <div class="card-content"><h2>Course Instructor(s):</h2>
+                <div><marked-element markdown="{{instructors.name}}"></marked-element></div>
+                <div><marked-element markdown="{{instructors.bio"></marked-element></div>
+              </div>
+              <div class="card-content"><h2>Course Syllabus</h2><marked-element markdown="{{item.syllabus}}"></marked-element></div>
+              <div class="card-content"><h2>Course FAQ</h2><marked-element markdown="{{item.faq}}"></marked-element></div>
         </material-paper>
       </template>
   </template>
@@ -78,7 +110,7 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
 
          properties: {
           toggle: function() {
-            this.$.collapse.toggle();
+            this.$.toggle();
           }
          }
       });// Closes Polymer

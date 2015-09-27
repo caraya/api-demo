@@ -506,14 +506,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <template is="dom-repeat" items="{{response.courses}}">
 
         <material-paper>
-            <div class="heading">{{item.title}}</div>
+            <div class="heading">{{item.title}}<paper-icon-button icon="icons:expand-less" on-click="toggle" alt="Collapse Course"></paper-icon-button></div>
             <div class="subheading">{{item.subtitle}}</div>
-            <div class="card-content"><marked-element markdown="{{item.summary}}"></marked-element></div>
-            <div class="card-content"><marked-element markdown="{{item.syllabus}}"></marked-element></div>
-
-            <div class="card-actions">
-              <button on-click="toggle">Toggle</button><br><a href="{{item.homepage}}">{{item.title}}</a>
+            <div class="card-action">
+              <a href="{{item.homepage}}">
+                <paper-icon-button icon="link" alt="link to course in Udacity"></paper-icon-button>
+              </a>
             </div>
+              <div class="card-content"><marked-element markdown="{{item.summary}}"></marked-element></div>
+
+              <div class="card-content"><h2>Required Knowledge:</h2><marked-element markdown="{{item.required_knowledge}}"></marked-element></div>
+              <div class="card-content"><h2>Expected Learning:</h2><marked-element markdown="{{item.expected_learning}}"></marked-element></div>
+              <div class="card-content"><h2>Course Instructor(s):</h2>
+                <div><marked-element markdown="{{instructors.name}}"></marked-element></div>
+                <div><marked-element markdown="{{instructors.bio"></marked-element></div>
+              </div>
+              <div class="card-content"><h2>Course Syllabus</h2><marked-element markdown="{{item.syllabus}}"></marked-element></div>
+              <div class="card-content"><h2>Course FAQ</h2><marked-element markdown="{{item.faq}}"></marked-element></div>
         </material-paper>
       </template>
   </template>

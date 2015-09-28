@@ -20,19 +20,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.scrollPageToTop();
     });
 
-    page('/users', function () {
-      app.route = 'users';
+    page('/courses', function () {
+      app.route = 'courses';
       app.scrollPageToTop();
     });
 
-    page('/users/:name', function (data) {
-      app.route = 'user-info';
+    page('/degrees', function (data) {
+      app.route = 'degrees';
       app.params = data.params;
       app.scrollPageToTop();
     });
 
-    page('/contact', function () {
-      app.route = 'contact';
+    page('/programs', function () {
+      app.route = 'programs';
       app.scrollPageToTop();
     });
 

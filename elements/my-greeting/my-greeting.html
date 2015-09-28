@@ -8,7 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-
+<link rel="import" href="../../bower_components/marked-element/marked-element.html">
 <dom-module id="my-greeting">
   <template>
     <style include="shared-styles"></style>
@@ -17,26 +17,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
     </style>
-    <h2 class="page-title"><span>{{greeting}}</span></h2>
-    <span class="paper-font-body2">Update text to change the greeting.</span>
-    <!-- Listens for "input" event and sets greeting to <input>.value -->
-    <input class="paper-font-body2" value="{{greeting::input}}">
-  </template>
+    <marked-element markdown="## About this project
+
+This is an experiment on using [Polymer](https://www.polymer-project.org/1.0/), the [Polymer Starter Kit](https://developers.google.com/web/tools/polymer-starter-kit/index?hl=en) and a third party API (in this case Udacity's publlic API) to test the technology and how to create applications.
+
+There are some aspects of the elements that still need refinement.
+
+### Nested elements in JSON file
+
+There are elements that are collections of nested children. Examples are:
+
+* Instructors for courses
+* Courses that are part of a track
+* Youtube video link to embed (but see below for another issue with the videos)
+
+### Video elements: component or no component?
+
+In addition to being a nested element, video presents another challenge: Whether to use a component or not and if so which one to use.
+
+The official `google-youtube` component requires a video ID to work well. The Udacity API provides a full URL for the video. Neither `google-youtube` or any other available Youtube components provide a way to use the URL and the src attribute to generate the iframe player.
+
+I posted an issue/question to Github and was given the code below as a possible solution:
+
+```javascript
+template.toVideoIdFilter = function(youtubeUrl) {
+  if (!youtubeUrl) {
+    return youtubeUrl;
+  }
+  return youtubeUrl.replace(/https?:\/\/youtu\.be\//, '');
+};
+```
+
+Other than being way above my head it makes me wonder how much will this impact performance
+
+### Cleaning up Markdown
+
+The Markdown provided in the JSON file is not clean. I'm trying to figure out if there are ways to clean it in the client or if I have to ping Udacity with request to clean it up.
+
+### Search
+
+How to best implement search functionality and how to best wire it to the app. Is a custom Google search the best way? There are no pre-made components for it so I may have to roll out my own.
+"</marked-element>
+
+</template>
 
   <script>
     (function() {
       'use strict';
-      
-      Polymer({
-        is: 'my-greeting',
 
-        properties: {
-          greeting: {
-            type: String,
-            value: 'Welcome!',
-            notify: true
-          }
-        }
+      Polymer({
+        is: 'my-greeting'
       });
     })();
   </script>

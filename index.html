@@ -50,9 +50,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-<style is="custom-style">/*Polymer includes a shim for CSS Custom Properties that we can use for application theming.Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to playwith changing the colors used or generate your own palette of colours at MaterialPalette.com.See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-detailsfor further information on custom CSS properties.*//* Application theme */:root {--dark-primary-color: #303F9F;--default-primary-color: #3F51B5;--light-primary-color: #C5CAE9;--text-primary-color: #ffffff; /*text/icons*/--accent-color: #FF4081;--primary-background-color: #c5cae9;--primary-text-color: #212121;--secondary-text-color: #727272;--disabled-text-color: #bdbdbd;--divider-color: #B6B6B6;/* Components *//* paper-drawer-panel */--drawer-menu-color: #ffffff;--drawer-border-color: 1px solid #ccc;--drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);/* paper-menu */--paper-menu-background-color: #fff;--menu-link-color: #111111;}/* General styles */#drawerToolbar {color: var(--secondary-text-color);background-color: var(--drawer-menu-color);border-bottom: var(--drawer-toolbar-border-color);}paper-scroll-header-panel {height: 100%;}paper-material {border-radius: 2px;height: 100%;padding: 16px 0 16px 0;width: calc(98.66% - 16px);margin: 16px auto;background: white;}paper-menu iron-icon {margin-right: 33px;opacity: 0.54;}.paper-menu > .iron-selected {color: var(--default-primary-color);}paper-menu a {text-decoration: none;color: var(--menu-link-color);display: -ms-flexbox;display: -webkit-flex;display: flex;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;-ms-flex-align: center;-webkit-align-items: center;align-items: center;font-family: 'Roboto', 'Noto', sans-serif;-webkit-font-smoothing: antialiased;text-rendering: optimizeLegibility;font-size: 14px;font-weight: 400;line-height: 24px;min-height: 48px;padding: 0 16px;}paper-toolbar.tall .app-name {font-size: 40px;font-weight: 300;/* Required for main area's paper-scroll-header-panel custom condensing transformation */-webkit-transform-origin: left center;transform-origin: left center;}#mainToolbar .middle-container{height: 100%;margin-left: 48px;}#mainToolbar:not(.tall) .middle {font-size: 18px;padding-bottom: 0;}#mainToolbar .bottom {margin-left: 48px;/* Required for main area's paper-scroll-header-panel custom condensing transformation */-webkit-transform-origin: left center;transform-origin: left center;}/* Height of the scroll area */.content {height: 900px;}/* Breakpoints *//* Small */@media (max-width: 600px) {paper-material {--menu-container-display: none;width: calc(97.33% - 32px);padding-left: 16px;padding-right: 16px;}paper-toolbar.tall .app-name {font-size: 24px;font-weight: 400;}#drawer .paper-toolbar {margin-left: 16px;}#overlay {min-width: 360px;}.bg {background: white;}}/* Tablet+ */@media (min-width: 601px) {paper-material {width: calc(98% - 46px);margin-bottom: 32px;padding-left: 30px;padding-right: 30px;}#drawer.paper-drawer-panel > [drawer] {border-right: 1px solid rgba(0, 0, 0, 0.14);}iron-pages {padding: 48px 62px;}}/* Material Design Adaptive Breakpoints *//*Below you'll find CSS media queries based on the breakpoint guidancepublished by the Material Design team. You can choose to use, customiseor remove these breakpoints based on your needs.http://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints*//* mobile-small */@media all and (min-width: 0) and (max-width: 360px) and (orientation: portrait) { }/* mobile-large */@media all and (min-width: 361px) and (orientation: portrait) { }/* mobile-small-landscape */@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }/* mobile-large-landscape */@media all and (min-width: 481px) and (orientation: landscape) { }/* tablet-small-landscape */@media all and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) { }/* tablet-large-landscape */@media all and (min-width: 961px) and (orientation: landscape) { }/* tablet-small */@media all and (min-width: 600px) and (orientation: portrait) { }/* tablet-large */@media all and (min-width: 601px) and (max-width: 840px) and (orientation : portrait) { }/* desktop-x-small-landscape */@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }/* desktop-x-small */@media all and (min-width: 0) and (max-width: 480px) and (max-aspect-ratio: 4/3) { }/* desktop-small-landscape */@media all and (min-width: 481px) and (max-width: 840px) and (orientation: landscape) { }/* desktop-small */@media all and (min-width: 481px) and (max-width: 840px) and (max-aspect-ratio: 4/3) { }/* desktop-medium-landscape */@media all and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) { }/* desktop-medium */@media all and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4/3) { }/* desktop-large */@media all and (min-width: 1281px) and (max-width: 1600px) { }/* desktop-xlarge */@media all and (min-width: 1601px) and (max-width: 1920px) { }</style>
+<style is="custom-style">/*Polymer includes a shim for CSS Custom Properties that we can use for application theming.Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to playwith changing the colors used or generate your own palette of colours at MaterialPalette.com.See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-detailsfor further information on custom CSS properties.*//* Application theme */:root {--dark-primary-color: #303F9F;--default-primary-color: #3F51B5;--light-primary-color: #C5CAE9;--text-primary-color: #ffffff; /*text/icons*/--accent-color: #FF4081;--primary-background-color: #c5cae9;--primary-text-color: #212121;--secondary-text-color: #727272;--disabled-text-color: #bdbdbd;--divider-color: #B6B6B6;/* Components *//* paper-drawer-panel */--drawer-menu-color: #ffffff;--drawer-border-color: 1px solid #ccc;--drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);/* paper-menu */--paper-menu-background-color: #fff;--menu-link-color: #111111;}/* General styles */#drawerToolbar {color: var(--secondary-text-color);background-color: var(--drawer-menu-color);border-bottom: var(--drawer-toolbar-border-color);}paper-scroll-header-panel {height: 100%;}paper-material {border-radius: 2px;height: 100%;padding: 16px 0 16px 0;width: calc(98.66% - 16px);margin: 16px auto;background: white;}paper-menu iron-icon {margin-right: 33px;opacity: 0.54;}.paper-menu > .iron-selected {color: var(--default-primary-color);}paper-menu a {text-decoration: none;color: var(--menu-link-color);display: -ms-flexbox;display: -webkit-flex;display: flex;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;-ms-flex-align: center;-webkit-align-items: center;align-items: center;font-family: 'Roboto', 'Noto', sans-serif;-webkit-font-smoothing: antialiased;text-rendering: optimizeLegibility;font-size: 14px;font-weight: 400;line-height: 24px;min-height: 48px;padding: 0 16px;}paper-toolbar.tall .app-name {font-size: 40px;font-weight: 300;/* Required for main area's paper-scroll-header-panel custom condensing transformation */-webkit-transform-origin: left center;transform-origin: left center;}#mainToolbar .middle-container{height: 100%;margin-left: 48px;}#mainToolbar:not(.tall) .middle {font-size: 18px;padding-bottom: 0;}#mainToolbar .bottom {margin-left: 48px;/* Required for main area's paper-scroll-header-panel custom condensing transformation */-webkit-transform-origin: left center;transform-origin: left center;}/* Height of the scroll area */.content {height: 900px;}/* Breakpoints *//* Small */@media (max-width: 600px) {paper-material {--menu-container-display: none;width: calc(97.33% - 32px);padding-left: 16px;padding-right: 16px;}paper-toolbar.tall .app-name {font-size: 24px;font-weight: 400;}#drawer .paper-toolbar {margin-left: 16px;}#overlay {min-width: 360px;}.bg {background: white;}}/* Tablet+ */@media (min-width: 601px) {paper-material {width: calc(98% - 46px);margin-bottom: 32px;padding-left: 30px;padding-right: 30px;}#drawer.paper-drawer-panel > [drawer] {border-right: 1px solid rgba(0, 0, 0, 0.14);}iron-pages {padding: 48px 62px;}}/* Material Design Adaptive Breakpoints *//*Below you'll find CSS media queries based on the breakpoint guidancepublished by the Material Design team. You can choose to use, customiseor remove these breakpoints based on your needs.http://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints*//* mobile-small */@media all and (min-width: 0) and (max-width: 360px) and (orientation: portrait) { }/* mobile-large */@media all and (min-width: 361px) and (orientation: portrait) { }/* mobile-small-landscape */@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }/* mobile-large-landscape */@media all and (min-width: 481px) and (orientation: landscape) { }/* tablet-small-landscape */@media all and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) { }/* tablet-large-landscape */@media all and (min-width: 961px) and (orientation: landscape) { }/* tablet-small */@media all and (min-width: 600px) and (orientation: portrait) { }/* tablet-large */@media all and (min-width: 601px) and (max-width: 840px) and (orientation : portrait) { }/* desktop-x-small-landscape */@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }/* desktop-x-small */@media all and (min-width: 0) and (max-width: 480px) and (max-aspect-ratio: 4/3) { }/* desktop-small-landscape */@media all and (min-width: 481px) and (max-width: 840px) and (orientation: landscape) { }/* desktop-small */@media all and (min-width: 481px) and (max-width: 840px) and (max-aspect-ratio: 4/3) { }/* desktop-medium-landscape */@media all and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) { }/* desktop-medium */@media all and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4/3) { }/* desktop-large */@media all and (min-width: 1281px) and (max-width: 1600px) { }/* desktop-xlarge */@media all and (min-width: 1601px) and (max-width: 1920px) { }</style><style>/**@licenseCopyright (c) 2015 The Polymer Project Authors. All rights reserved.This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txtThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txtThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txtCode distributed by Google as part of the polymer project is alsosubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt*/body {font-family: 'Roboto', 'Noto', sans-serif;font-size: 14px;margin: 0;padding: 24px;}section {padding: 20px 0;}section > div {padding: 14px;font-size: 16px;}</style>
+
+
+
+
+
+
+
+
+
 <style>/**@licenseCopyright (c) 2015 The Polymer Project Authors. All rights reserved.This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txtThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txtThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txtCode distributed by Google as part of the polymer project is alsosubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt*/body {font-family: 'Roboto', 'Noto', sans-serif;font-size: 14px;margin: 0;padding: 24px;}section {padding: 20px 0;}section > div {padding: 14px;font-size: 16px;}</style>
 
+
+
+
+
+
+
+
+
+<style>/**@licenseCopyright (c) 2015 The Polymer Project Authors. All rights reserved.This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txtThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txtThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txtCode distributed by Google as part of the polymer project is alsosubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt*/body {font-family: 'Roboto', 'Noto', sans-serif;font-size: 14px;margin: 0;padding: 24px;}section {padding: 20px 0;}section > div {padding: 14px;font-size: 16px;}</style>
 
 
 
@@ -477,7 +495,65 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </dom-module>
 
-<dom-module id="shared-styles" assetpath="styles/"><template><style>.page-title {@apply(--paper-font-display2);}@media (max-width: 600px) {.page-title {font-size: 24px!important;}}</style></template></dom-module><dom-module id="iron-collapse" assetpath="bower_components/iron-collapse/">
+<dom-module id="shared-styles" assetpath="styles/"><template><style>.page-title {@apply(--paper-font-display2);}@media (max-width: 600px) {.page-title {font-size: 24px!important;}}</style></template></dom-module><dom-module id="marked-element" assetpath="bower_components/marked-element/">
+  <template>
+    <style>/* Thanks IE 10. */.hidden {display: none !important;}</style>
+    <content select=".markdown-html"></content>
+    <div id="content" class="hidden"></div>
+  </template>
+
+</dom-module>
+
+<dom-module id="my-greeting" assetpath="elements/my-greeting/">
+  <template>
+    <style include="shared-styles"></style>
+    <style>:host {display: block;}</style>
+    <marked-element markdown="## About this project
+
+This is an experiment on using [Polymer](https://www.polymer-project.org/1.0/), the [Polymer Starter Kit](https://developers.google.com/web/tools/polymer-starter-kit/index?hl=en) and a third party API (in this case Udacity's publlic API) to test the technology and how to create applications.
+
+There are some aspects of the elements that still need refinement.
+
+### Nested elements in JSON file
+
+There are elements that are collections of nested children. Examples are:
+
+* Instructors for courses
+* Courses that are part of a track
+* Youtube video link to embed (but see below for another issue with the videos)
+
+### Video elements: component or no component?
+
+In addition to being a nested element, video presents another challenge: Whether to use a component or not and if so which one to use.
+
+The official `google-youtube` component requires a video ID to work well. The Udacity API provides a full URL for the video. Neither `google-youtube` or any other available Youtube components provide a way to use the URL and the src attribute to generate the iframe player.
+
+I posted an issue/question to Github and was given the code below as a possible solution:
+
+```javascript
+template.toVideoIdFilter = function(youtubeUrl) {
+  if (!youtubeUrl) {
+    return youtubeUrl;
+  }
+  return youtubeUrl.replace(/https?:\/\/youtu\.be\//, '');
+};
+```
+
+Other than being way above my head it makes me wonder how much will this impact performance
+
+### Cleaning up Markdown
+
+The Markdown provided in the JSON file is not clean. I'm trying to figure out if there are ways to clean it in the client or if I have to ping Udacity with request to clean it up.
+
+### Search
+
+How to best implement search functionality and how to best wire it to the app. Is a custom Google search the best way? There are no pre-made components for it so I may have to roll out my own.
+" <="" marked-element="">
+
+</marked-element></template>
+
+  </dom-module>
+<dom-module id="iron-collapse" assetpath="bower_components/iron-collapse/">
 
   <style>:host {display: block;transition-duration: 300ms;}:host(.iron-collapse-closed) {display: none;}:host(:not(.iron-collapse-opened)) {overflow: hidden;}</style>
 
@@ -489,11 +565,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </dom-module>
 
-<dom-module id="marked-element" assetpath="bower_components/marked-element/">
+<dom-module id="iron-localstorage" assetpath="bower_components/iron-localstorage/"></dom-module>
+<dom-module id="google-youtube" assetpath="bower_components/google-youtube/">
+  <style>:host {display: block;}:host([fluid]) {width: 100%;max-width: 100%;position: relative;}:host([fluid]) iframe,:host([fluid]) #thumbnail {vertical-align: bottom;position: absolute;top: 0px;left: 0px;width: 100%;height: 100%;}#container {max-width: 100%;max-height: 100%;}#thumbnail {width: 100%;height: 100%;cursor: pointer;}/* Some browsers will refuse to play videos with 'display: none' set, so position the video well offscreen instead. */#playtest {position: absolute;top: -9999px;left: -9999px;}</style>
+
   <template>
-    <style>/* Thanks IE 10. */.hidden {display: none !important;}</style>
-    <content select=".markdown-html"></content>
-    <div id="content" class="hidden"></div>
+    <div id="container" style$="{{_computeContainerStyle(width, height)}}">
+      <template is="dom-if" if="{{thumbnail}}">
+        <img id="thumbnail" src$="{{thumbnail}}" title="YouTube video thumbnail." alt="YouTube video thumbnail." on-tap="_handleThumbnailTap">
+      </template>
+
+      <template is="dom-if" if="{{!thumbnail}}">
+        <google-youtube-api on-api-load="_apiLoad"></google-youtube-api>
+      </template>
+
+      
+      <iron-localstorage name="google-youtube-playsupported" value="{{_playsupportedLocalStorage}}" on-iron-localstorage-load="_useExistingPlaySupportedValue" on-iron-localstorage-load-empty="_determinePlaySupported">
+      </iron-localstorage>
+
+      <div id="player"></div>
+    </div>
+  </template>
+</dom-module>
+
+<dom-module id="iron-image" assetpath="bower_components/iron-image/">
+
+  <style>:host {display: inline-block;overflow: hidden;position: relative;}:host([sizing]) #img {display: none;}#placeholder {background-color: inherit;opacity: 1;}#placeholder.faded-out {transition: opacity 0.5s linear;opacity: 0;}</style>
+
+  <template>
+
+    <img id="img" role="none" hidden$="[[_computeImageVisibility(sizing)]]">
+    <div id="placeholder" hidden$="[[_computePlaceholderVisibility(fade,loaded,preload)]]" class$="[[_computePlaceholderClassName(fade,loaded,preload)]]"></div>
+    <content></content>
+
   </template>
 
 </dom-module>
@@ -506,15 +610,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <template is="dom-repeat" items="{{response.courses}}">
 
         <material-paper>
-            <div class="heading">{{item.title}}<paper-icon-button icon="icons:expand-less" on-click="toggle" alt="Collapse Course"></paper-icon-button></div>
+          <div class="heading"><img style="width:100%; height:20%" src="{{item.banner_image}}">{{item.title}}</div>
+          <div class="subheading">{{item.subtitle}}</div>
+          <div class="card-content">
+            <a href="{{item.homepage}}">
+              <paper-icon-button icon="link" alt="link to course in Udacity"></paper-icon-button>
+            </a>
+          </div>
+          <div class="card-content"><div><img style="width:100%; height:20%" src="{{item.image}}"></div><marked-element markdown="{{item.summary}}"></marked-element></div>
+
+          <div class="card-content">
+            <google-youtube video-id="{{video_data}}" height="270px" width="480px" rel="0" start="5" autoplay="0">
+            </google-youtube>
+          </div>
+          <div class="card-content"><h2>Required Knowledge:</h2><marked-element markdown="{{item.required_knowledge}}"></marked-element></div>
+          <div class="card-content"><h2>Expected Learning:</h2><marked-element markdown="{{item.expected_learning}}"></marked-element></div>
+          <div class="card-content"><h2>Course Instructor(s):</h2>
+            <template is="dom-repeat" items="{{response.instructors}}">
+              <h3>{{item.name}}</h3>
+              <div>
+                <marked-element markdown="{{item.bio}}"></marked-element>
+              </div>
+            </template>
+          </div>
+          <div class="card-content"><h2>Course Syllabus</h2><marked-element markdown="{{item.syllabus}}"></marked-element></div>
+          <div class="card-content"><h2>Course FAQ</h2><marked-element markdown="{{item.faq}}"></marked-element></div>
+        </material-paper>
+      </template>
+  </template>
+
+  </dom-module>
+<dom-module id="degree-listing" assetpath="elements/degree-listing/">
+  <template>
+    <style>:host {box-sizing: border-box;display: block;}.heading {padding: 10px 15px;margin-top: 20px;background-color: #f3f3f3;border: 1px solid #dedede;border-top-left-radius: 5px;border-top-right-radius: 5px;font-size: 1.5em;/* cursor: pointer; */-webkit-tap-highlight-color: rgba(0,0,0,0);width: 80%;text-align: center;}.subheading {padding: 10px 15px;background-color: #f3f3f3;border: 1px solid #dedede;font-size: 1em;/* cursor: pointer; */-webkit-tap-highlight-color: rgba(0,0,0,0);width: 80%;text-align: center;}.card-content {padding: 15px;border: 1px solid #dedede;border-top: none;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;width: 80%;}</style>
+    <iron-ajax auto="" url="https://www.udacity.com/public-api/v0/courses" handle-as="json" last-response="{{response}}"></iron-ajax>
+
+      <template is="dom-repeat" items="{{response.degrees}}">
+
+        <material-paper>
+            <div class="heading">{{item.title}}</div>
             <div class="subheading">{{item.subtitle}}</div>
-            <div class="card-action">
+            <div class="card-content">
               <a href="{{item.homepage}}">
                 <paper-icon-button icon="link" alt="link to course in Udacity"></paper-icon-button>
               </a>
             </div>
               <div class="card-content"><marked-element markdown="{{item.summary}}"></marked-element></div>
 
+              <div class="card-content">
+
+              </div>
               <div class="card-content"><h2>Required Knowledge:</h2><marked-element markdown="{{item.required_knowledge}}"></marked-element></div>
               <div class="card-content"><h2>Expected Learning:</h2><marked-element markdown="{{item.expected_learning}}"></marked-element></div>
               <div class="card-content"><h2>Course Instructor(s):</h2>
@@ -528,4 +673,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   </dom-module>
-</div><span id="browser-sync-binding"></span><template is="dom-bind" id="app"><paper-drawer-panel id="paperDrawerPanel"><paper-scroll-header-panel drawer="" fixed=""><paper-toolbar id="drawerToolbar"><span class="paper-font-title">Menu</span></paper-toolbar><paper-menu class="list" attr-for-selected="data-route" selected="[[route]]"><a data-route="home" href="/" on-click="onDataRouteClick"><iron-icon icon="home"></iron-icon><span>Home</span></a> <a data-route="users" href="/users" on-click="onDataRouteClick"><iron-icon icon="info"></iron-icon><span>Users</span></a> <a data-route="contact" href="/contact" on-click="onDataRouteClick"><iron-icon icon="mail"></iron-icon><span>Contact</span></a></paper-menu></paper-scroll-header-panel><paper-scroll-header-panel main="" condenses="" keep-condensed-header=""><paper-toolbar id="mainToolbar" class="tall"><paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle=""></paper-icon-button><span class="flex"></span><paper-icon-button icon="refresh"></paper-icon-button><paper-icon-button icon="search"></paper-icon-button><div class="middle middle-container center horizontal layout"><div class="app-name">Udacity Course Catalog</div></div><div class="bottom bottom-container center horizontal layout"><div class="bottom-title paper-font-subhead">A Polymer Experiment</div></div></paper-toolbar><div class="content"><course-listing></course-listing></div></paper-scroll-header-panel></paper-drawer-panel></template><script src="index.build.js"></script></body></html>
+<dom-module id="program-listing" assetpath="elements/program-listing/">
+  <template>
+    <style>:host {box-sizing: border-box;display: block;}.heading {padding: 10px 15px;margin-top: 20px;background-color: #f3f3f3;border: 1px solid #dedede;border-top-left-radius: 5px;border-top-right-radius: 5px;font-size: 1.5em;/* cursor: pointer; */-webkit-tap-highlight-color: rgba(0,0,0,0);width: 80%;text-align: center;}.subheading {padding: 10px 15px;background-color: #f3f3f3;border: 1px solid #dedede;font-size: 1em;/* cursor: pointer; */-webkit-tap-highlight-color: rgba(0,0,0,0);width: 80%;text-align: center;}.card-content {padding: 15px;border: 1px solid #dedede;border-top: none;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;width: 80%;}</style>
+    <iron-ajax auto="" url="https://www.udacity.com/public-api/v0/courses" handle-as="json" last-response="{{response}}"></iron-ajax>
+
+      <template is="dom-repeat" items="{{response.tracks}}">
+
+        <material-paper>
+          <div class="heading">{{item.name}}</div>
+          <div class="card-content"><marked-element markdown="{{item.description}}"></marked-element></div>
+          <div class="card-content">
+            <h3>Courses in sequence</h3>
+            <ul>
+              <li>Placeholder</li>
+            </ul>
+          </div>
+        </material-paper>
+      </template>
+  </template>
+
+  </dom-module>
+</div><span id="browser-sync-binding"></span><template is="dom-bind" id="app"><paper-drawer-panel id="paperDrawerPanel"><paper-scroll-header-panel drawer="" fixed=""><paper-toolbar id="drawerToolbar"><span class="paper-font-title">Menu</span></paper-toolbar><paper-menu class="list" attr-for-selected="data-route" selected="[[route]]"><a data-route="home" href="/" on-click="onDataRouteClick"><iron-icon icon="home"></iron-icon><span>Home</span></a> <a data-route="users" href="/courses" on-click="onDataRouteClick"><iron-icon icon="info"></iron-icon><span>Courses</span></a> <a data-route="programs" href="/programs" on-click="onDataRouteClick"><iron-icon icon="info"></iron-icon><span>Programs</span></a> <a data-route="degrees" href="/degrees" on-click="onDataRouteClick"><iron-icon icon="info"></iron-icon><span>Nanodegrees</span></a></paper-menu></paper-scroll-header-panel><paper-scroll-header-panel main="" condenses="" keep-condensed-header=""><paper-toolbar id="mainToolbar" class="tall"><paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle=""></paper-icon-button><span class="flex"></span><paper-icon-button icon="refresh"></paper-icon-button><paper-icon-button icon="search"></paper-icon-button><div class="middle middle-container center horizontal layout"><div class="app-name">Udacity Course Catalog</div></div><div class="bottom bottom-container center horizontal layout"><div class="bottom-title paper-font-subhead">A Polymer Experiment</div></div></paper-toolbar><div class="content"><iron-pages attr-for-selected="data-route" selected="{{route}}"><section data-route="home"><paper-material elevation="1"><my-greeting></my-greeting></paper-material></section><section data-route="courses"><h2 class="page-title">Course Listing</h2><course-listing></course-listing></section><section data-route="degrees"><h2 class="page-title">Degrees</h2><degree-listing></degree-listing></section><section data-route="programs"><h2 class="page-title">Tracks</h2><program-listing></program-listing></section></iron-pages></div></paper-scroll-header-panel></paper-drawer-panel></template><script src="index.build.js"></script></body></html>

@@ -86,14 +86,11 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
           <div class="card-content"><div><img style="width:100%; height:20%" src="{{item.image}}"></div><marked-element markdown="{{item.summary}}"></marked-element></div>
 
           <div class="card-content">
-            <google-youtube
-                            video-id="{{video_data}}"
-                            height="270px"
-                            width="480px"
-                            rel="0"
-                            start="5"
-                            autoplay="0">
-            </google-youtube>
+          <google-youtube
+            video-id="{{_computeId(item.teaser_video.youtube_url)}}"
+            width="100%"
+            rel="0"
+            autoplay="0"></google-youtube>
           </div>
           <div class="card-content"><h2>Required Knowledge:</h2><marked-element markdown="{{item.required_knowledge}}"></marked-element></div>
           <div class="card-content"><h2>Expected Learning:</h2><marked-element markdown="{{item.expected_learning}}"></marked-element></div>
@@ -117,11 +114,8 @@ Some of the items are written in Markdown. use `juicy-markdown` to address those
 
       Polymer({
         is: 'course-listing',
-
-        properties: {
-          toggle: function() {
-            this.$.toggle();
-          }
+        _computeId: function(url) {
+          return url.split('?v=')[1];
         }
       });// Closes Polymer
     })(); // Closes anonymous function
